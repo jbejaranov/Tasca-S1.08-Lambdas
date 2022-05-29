@@ -1,4 +1,4 @@
-package ex1;
+package ex2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,15 +17,16 @@ public class Pais {
 		llista.add("Etiopía");
 		llista.add("Somalia");
 		llista.add("Uganda");
+		llista.add("Congo");
 
-		paisO(llista);
+		filtre(llista);
 
 	}
 
-	public static void paisO(List<String> llista) {
+	public static void filtre(List<String> llista) {
 
-		llista.stream().filter(pais -> pais.contains("o"))
-				.forEach(pais -> System.out.println("Paisos amb lletra O: " + pais));
+		llista.stream().filter(pais -> pais.contains("o") && pais.length() <= 5)
+				.forEach(pais -> System.out.println("Paisos amb lletra O i <= de 5 lletres: " + pais));
 
 	}
 }
